@@ -1,24 +1,24 @@
 import type { Config } from "tailwindcss";
 
 export default {
-	darkMode: ["class"],
-	content: [
-		"./pages/**/*.{ts,tsx}",
-		"./components/**/*.{ts,tsx}",
-		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
-	],
-	prefix: "",
-	theme: {
-		container: {
-			center: true,
-			padding: '2rem',
-			screens: {
-				'2xl': '1400px'
-			}
-		},
-		extend: {
-			colors: {
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -69,9 +69,17 @@ export default {
 					highlight: '#0EA5E9', // Bright blue for highlights/CTAs
 					light: '#F1F0FB', // Light background
 					dark: '#1A1F2C', // Dark background
-				}
-			},
-			fontFamily: {
+				},
+        stellaris: {
+          primary: '#9b87f5', // Primary Purple
+          secondary: '#7E69AB', // Secondary Purple
+          accent: '#6E59A5', // Accent Purple
+          highlight: '#8B5CF6', // Highlight Purple
+          light: '#F1F0FB', // Light background
+          dark: '#1A1F2C', // Dark background
+        }
+      },
+      fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 				heading: ['Poppins', 'sans-serif'],
 			},
@@ -134,7 +142,7 @@ export default {
 				'hero-pattern': 'linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%)',
 				'cta-pattern': 'linear-gradient(90deg, hsla(224, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%)'
 			}
-		}
-	},
-	plugins: [require("tailwindcss-animate")],
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
