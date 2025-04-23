@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -52,8 +51,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium mb-1">Email</h4>
-                  <a href="mailto:contato@noxx.com.br" className="text-white/80 hover:text-white transition-colors">
-                    contato@noxx.com.br
+                  <a href="mailto:stellaris.deep@gmail.com" className="text-white/80 hover:text-white transition-colors">
+                    stellaris.deep@gmail.com
                   </a>
                 </div>
               </div>
@@ -64,8 +63,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium mb-1">Telefone</h4>
-                  <a href="tel:+551199999999" className="text-white/80 hover:text-white transition-colors">
-                    +55 11 99999-9999
+                  <a href="tel:+557411-8938" className="text-white/80 hover:text-white transition-colors">
+                    +55 7411-8938
                   </a>
                 </div>
               </div>
@@ -77,7 +76,6 @@ const ContactSection = () => {
                 <div>
                   <h4 className="text-lg font-medium mb-1">Endereço</h4>
                   <p className="text-white/80">
-                    Av. Paulista, 1000<br />
                     São Paulo, SP - Brasil
                   </p>
                 </div>

@@ -1,11 +1,13 @@
 
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 const plans = [
   {
     name: "Starter",
     price: "R$ 2.997",
+    installments: "6x de R$ 499,50",
     description: "Ideal para pequenas empresas iniciando sua presença digital",
     features: [
       "Site responsivo em 72h",
@@ -19,6 +21,7 @@ const plans = [
   {
     name: "Professional",
     price: "R$ 4.997",
+    installments: "6x de R$ 832,83",
     description: "Nosso plano mais popular para empresas em crescimento",
     features: [
       "Site responsivo em 72h",
@@ -34,6 +37,7 @@ const plans = [
   {
     name: "Enterprise",
     price: "Sob consulta",
+    installments: "Consulte condições",
     description: "Para empresas que precisam de uma solução completa",
     features: [
       "Site personalizado",
@@ -56,9 +60,17 @@ const PricingSection = () => {
           <h2 className="mb-4">
             Escolha o plano ideal para <span className="text-gradient">sua empresa</span>
           </h2>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-700 mb-6">
             Soluções que combinam tecnologia, design e inteligência para impulsionar seu negócio digital.
           </p>
+          <div className="flex flex-col gap-3 items-center">
+            <Badge variant="secondary" className="py-1.5 px-4 text-sm bg-purple-100 text-purple-800 border-purple-200">
+              Powered by AI: Aumento médio de 35% em conversões
+            </Badge>
+            <Badge variant="secondary" className="py-1.5 px-4 text-sm bg-blue-100 text-blue-800 border-blue-200">
+              Análise comportamental em tempo real
+            </Badge>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -77,7 +89,8 @@ const PricingSection = () => {
               <div className="mb-8">
                 <h3 className="text-2xl font-semibold mb-2">{plan.name}</h3>
                 <p className="text-gray-600 mb-4">{plan.description}</p>
-                <div className="text-3xl font-bold text-stellaris-primary">{plan.price}</div>
+                <div className="text-3xl font-bold text-stellaris-primary mb-2">{plan.price}</div>
+                <div className="text-sm text-gray-600">Em até {plan.installments}</div>
               </div>
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, index) => (
@@ -89,7 +102,7 @@ const PricingSection = () => {
               </ul>
               <div className="mt-auto">
                 <Button 
-                  className={`w-full ${plan.highlight ? 'btn-primary' : 'btn-secondary'}`}
+                  className="w-full bg-stellaris-primary hover:bg-stellaris-accent text-white"
                   onClick={() => window.location.href = '#contact'}
                 >
                   Começar agora
