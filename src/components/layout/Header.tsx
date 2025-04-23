@@ -23,6 +23,14 @@ const Header = () => {
     };
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -31,27 +39,43 @@ const Header = () => {
     >
       <div className="container-custom flex items-center justify-between">
         <div className="flex items-center">
-          <Link to="/" className="text-2xl font-bold text-noxx-primary">
-            <span className="text-noxx-accent">N</span>oxx
+          <Link to="/" onClick={() => window.scrollTo(0, 0)} className="text-2xl font-bold text-stellaris-primary">
+            <span className="text-stellaris-accent">S</span>tellaris
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="#services" className="font-medium hover:text-noxx-accent transition-colors">
+          <a 
+            href="#services" 
+            onClick={(e) => { e.preventDefault(); scrollToSection('services'); }} 
+            className="font-medium hover:text-stellaris-accent transition-colors"
+          >
             Soluções
-          </Link>
-          <Link to="#benefits" className="font-medium hover:text-noxx-accent transition-colors">
+          </a>
+          <a 
+            href="#benefits" 
+            onClick={(e) => { e.preventDefault(); scrollToSection('benefits'); }} 
+            className="font-medium hover:text-stellaris-accent transition-colors"
+          >
             Diferenciais
-          </Link>
-          <Link to="#process" className="font-medium hover:text-noxx-accent transition-colors">
+          </a>
+          <a 
+            href="#process" 
+            onClick={(e) => { e.preventDefault(); scrollToSection('process'); }} 
+            className="font-medium hover:text-stellaris-accent transition-colors"
+          >
             Processo
-          </Link>
-          <Link to="#testimonials" className="font-medium hover:text-noxx-accent transition-colors">
+          </a>
+          <a 
+            href="#testimonials" 
+            onClick={(e) => { e.preventDefault(); scrollToSection('testimonials'); }} 
+            className="font-medium hover:text-stellaris-accent transition-colors"
+          >
             Cases
-          </Link>
+          </a>
           <Button 
-            onClick={() => window.location.href = '#contact'}
+            onClick={() => scrollToSection('contact')}
             className="btn-primary ml-4"
           >
             Contato
@@ -65,9 +89,9 @@ const Header = () => {
             className="p-2 focus:outline-none"
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-noxx-primary" />
+              <X className="h-6 w-6 text-stellaris-primary" />
             ) : (
-              <Menu className="h-6 w-6 text-noxx-primary" />
+              <Menu className="h-6 w-6 text-stellaris-primary" />
             )}
           </button>
         </div>
@@ -77,41 +101,41 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white shadow-lg absolute top-full left-0 w-full">
           <div className="container-custom py-4 flex flex-col space-y-4">
-            <Link 
-              to="#services" 
-              className="font-medium py-2 hover:text-noxx-accent"
-              onClick={() => setIsMenuOpen(false)}
+            <a 
+              href="#services" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('services'); }} 
+              className="font-medium py-2 hover:text-stellaris-accent"
             >
               Soluções
-            </Link>
-            <Link 
-              to="#benefits" 
-              className="font-medium py-2 hover:text-noxx-accent"
-              onClick={() => setIsMenuOpen(false)}
+            </a>
+            <a 
+              href="#benefits" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('benefits'); }} 
+              className="font-medium py-2 hover:text-stellaris-accent"
             >
               Diferenciais
-            </Link>
-            <Link 
-              to="#process" 
-              className="font-medium py-2 hover:text-noxx-accent"
-              onClick={() => setIsMenuOpen(false)}
+            </a>
+            <a 
+              href="#process" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('process'); }} 
+              className="font-medium py-2 hover:text-stellaris-accent"
             >
               Processo
-            </Link>
-            <Link 
-              to="#testimonials" 
-              className="font-medium py-2 hover:text-noxx-accent"
-              onClick={() => setIsMenuOpen(false)}
+            </a>
+            <a 
+              href="#testimonials" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('testimonials'); }} 
+              className="font-medium py-2 hover:text-stellaris-accent"
             >
               Cases
-            </Link>
-            <Link 
-              to="#contact" 
+            </a>
+            <a 
+              href="#contact" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} 
               className="btn-primary text-center"
-              onClick={() => setIsMenuOpen(false)}
             >
               Contato
-            </Link>
+            </a>
           </div>
         </div>
       )}

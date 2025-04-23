@@ -15,7 +15,8 @@ const steps = [
       "Identificação de público-alvo e personas",
       "Levantamento de requisitos técnicos e funcionais",
       "Definição de KPIs e métricas de sucesso"
-    ]
+    ],
+    image: "photo-1460925895917-afdab827c52f"
   },
   {
     id: "design",
@@ -28,7 +29,8 @@ const steps = [
       "Testes de usabilidade e ajustes de UX",
       "Layouts responsivos para todos os dispositivos",
       "Validação final do design com stakeholders"
-    ]
+    ],
+    image: "photo-1461749280684-dccba630e2f6"
   },
   {
     id: "development",
@@ -41,7 +43,8 @@ const steps = [
       "Otimização para performance e tempo de carregamento",
       "Integração com sistemas e APIs de terceiros",
       "Testes de qualidade e compatibilidade cross-browser"
-    ]
+    ],
+    image: "photo-1487058792275-0ad4aaf24ca7"
   },
   {
     id: "optimization",
@@ -54,7 +57,8 @@ const steps = [
       "Implementação de testes A/B para elementos críticos",
       "Ajustes de performance e tempo de resposta",
       "Refinamentos de UX baseados em feedback real"
-    ]
+    ],
+    image: "photo-1581091226825-a6a2a5aee158"
   },
   {
     id: "launch",
@@ -67,7 +71,8 @@ const steps = [
       "Monitoramento de desempenho em tempo real",
       "Suporte técnico dedicado durante o lançamento",
       "Estratégia de divulgação e marketing de lançamento"
-    ]
+    ],
+    image: "photo-1486312338219-ce68d2c6f44d"
   },
   {
     id: "growth",
@@ -80,7 +85,8 @@ const steps = [
       "Otimização contínua de conversão (CRO)",
       "Updates regulares de conteúdo e funcionalidades",
       "Relatórios periódicos de desempenho e resultados"
-    ]
+    ],
+    image: "photo-1460925895917-afdab827c52f"
   }
 ];
 
@@ -88,7 +94,7 @@ const ProcessSection = () => {
   const [activeTab, setActiveTab] = useState("discovery");
 
   return (
-    <section id="process" className="section bg-gradient-to-b from-noxx-light to-white">
+    <section id="process" className="section bg-gradient-to-b from-stellaris-light to-white">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="mb-4">
@@ -106,17 +112,17 @@ const ProcessSection = () => {
                 key={step.id} 
                 value={step.id}
                 className={`
-                  flex flex-col items-center px-3 py-4 rounded-lg border transition-all duration-300 data-[state=active]:border-noxx-accent
+                  flex flex-col items-center px-3 py-4 rounded-lg border transition-all duration-300 data-[state=active]:border-stellaris-accent
                   ${activeTab === step.id 
-                    ? 'bg-white shadow-md border-noxx-accent' 
-                    : 'bg-white/50 border-gray-200 hover:bg-white hover:border-noxx-accent/50'
+                    ? 'bg-white shadow-md border-stellaris-accent' 
+                    : 'bg-white/50 border-gray-200 hover:bg-white hover:border-stellaris-accent/50'
                   }
                 `}
               >
                 <div className={`
                   w-12 h-12 rounded-full flex items-center justify-center mb-2 transition-colors
                   ${activeTab === step.id 
-                    ? 'bg-noxx-accent text-white' 
+                    ? 'bg-stellaris-accent text-white' 
                     : 'bg-gray-100 text-gray-600'
                   }
                 `}>
@@ -136,7 +142,7 @@ const ProcessSection = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div>
                   <h3 className="text-2xl font-semibold mb-4 flex items-center">
-                    <span className="bg-noxx-accent text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">
+                    <span className="bg-stellaris-accent text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">
                       {step.title.split(". ")[0]}
                     </span>
                     {step.title.split(". ")[1]}
@@ -147,7 +153,7 @@ const ProcessSection = () => {
                   <ul className="space-y-3">
                     {step.details.map((detail, idx) => (
                       <li key={idx} className="flex items-center">
-                        <span className="bg-noxx-accent/20 text-noxx-accent rounded-full p-1 mr-3">
+                        <span className="bg-stellaris-accent/20 text-stellaris-accent rounded-full p-1 mr-3">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
@@ -158,14 +164,14 @@ const ProcessSection = () => {
                   </ul>
                 </div>
                 <div className="relative flex items-center justify-center">
-                  <div className="bg-noxx-light rounded-xl p-8 relative z-10">
+                  <div className="bg-stellaris-light rounded-xl p-8 relative z-10">
                     <img 
-                      src={`https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=2070`}
-                      alt={`Fase de ${step.title.split(". ")[1]} do processo Noxx`}
+                      src={`https://images.unsplash.com/${step.image}?q=80&w=2070`}
+                      alt={`Fase de ${step.title.split(". ")[1]} do processo Stellaris`}
                       className="rounded-lg shadow-md"
                     />
                   </div>
-                  <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-noxx-accent/10 rounded-full blur-2xl -z-10"></div>
+                  <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-stellaris-accent/10 rounded-full blur-2xl -z-10"></div>
                 </div>
               </div>
             </TabsContent>

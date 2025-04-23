@@ -21,7 +21,7 @@ const HeroSection = () => {
                 Ver planos e preços 
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button className="btn-secondary" onClick={() => window.location.href = '#how-it-works'}>
+              <Button className="btn-secondary" onClick={() => window.location.href = '#process'}>
                 Como funciona
               </Button>
             </div>
@@ -43,12 +43,12 @@ const HeroSection = () => {
 
           <div className="relative animate-fade-in">
             <div className="relative z-10 animate-float shadow-2xl rounded-xl overflow-hidden bg-white p-6">
-              <h3 className="text-xl font-semibold mb-4">Painel Analítico em Tempo Real</h3>
+              <h3 className="text-xl font-semibold mb-4">Relatório de Analytics Mensal</h3>
               <div className="space-y-4">
                 <div className="analytics-card">
                   <div className="flex justify-between items-center mb-2">
-                    <span>Visitantes Ativos</span>
-                    <span className="text-stellaris-primary font-semibold">247</span>
+                    <span>Visitantes Únicos</span>
+                    <span className="text-stellaris-primary font-semibold">1.458</span>
                   </div>
                   <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                     <div className="h-full w-3/4 bg-gradient-to-r from-stellaris-primary to-stellaris-accent"></div>
@@ -65,8 +65,8 @@ const HeroSection = () => {
                 </div>
                 <div className="analytics-card">
                   <div className="flex justify-between items-center mb-2">
-                    <span>Tempo Médio</span>
-                    <span className="text-stellaris-primary font-semibold">3:24</span>
+                    <span>Engajamento Médio</span>
+                    <span className="text-stellaris-primary font-semibold">5:24</span>
                   </div>
                   <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                     <div className="h-full w-2/3 bg-gradient-to-r from-stellaris-primary to-stellaris-accent"></div>

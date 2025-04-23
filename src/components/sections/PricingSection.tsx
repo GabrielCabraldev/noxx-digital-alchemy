@@ -87,12 +87,14 @@ const PricingSection = () => {
                   </li>
                 ))}
               </ul>
-              <Button 
-                className={`w-full ${plan.highlight ? 'btn-primary' : 'btn-secondary'}`}
-                onClick={() => window.location.href = '#contact'}
-              >
-                Começar agora
-              </Button>
+              <div className="mt-auto">
+                <Button 
+                  className={`w-full ${plan.highlight ? 'btn-primary' : 'btn-secondary'}`}
+                  onClick={() => window.location.href = '#contact'}
+                >
+                  Começar agora
+                </Button>
+              </div>
             </div>
           ))}
         </div>
