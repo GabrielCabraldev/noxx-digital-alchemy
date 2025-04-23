@@ -113,25 +113,39 @@
   }
 }
 
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .mobile-container {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
 @layer components {
   .hero-gradient {
-    @apply bg-gradient-to-tr from-noxx-primary via-noxx-secondary to-noxx-accent;
+    @apply bg-gradient-to-tr from-stellaris-primary via-stellaris-secondary to-stellaris-accent;
   }
   
   .btn-primary {
-    @apply bg-noxx-highlight hover:bg-noxx-accent text-white font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+    @apply bg-stellaris-primary hover:bg-stellaris-accent text-white font-medium py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none;
   }
   
   .btn-secondary {
-    @apply bg-white text-noxx-primary border-2 border-noxx-primary hover:bg-noxx-light font-medium py-3 px-6 rounded-md transition-all duration-300;
+    @apply bg-white text-stellaris-primary border-2 border-stellaris-primary hover:bg-stellaris-light font-medium py-3 px-6 rounded-md transition-all duration-300 disabled:opacity-50;
   }
   
   .section {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-16 lg:py-24;
   }
   
   .container-custom {
-    @apply container mx-auto px-4 md:px-8;
+    @apply container mx-auto px-4 md:px-8 max-w-7xl;
   }
   
   .card-hover {
@@ -139,6 +153,24 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-noxx-secondary to-noxx-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-stellaris-secondary to-stellaris-accent;
+  }
+  
+  @media (max-width: 640px) {
+    .section {
+      @apply py-8;
+    }
+    
+    h1 {
+      @apply text-3xl;
+    }
+    
+    h2 {
+      @apply text-2xl;
+    }
+    
+    h3 {
+      @apply text-xl;
+    }
   }
 }
