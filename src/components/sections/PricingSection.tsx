@@ -6,8 +6,8 @@ import { Badge } from '@/components/ui/badge';
 const plans = [
   {
     name: "Starter",
-    price: "R$ 2.997",
-    installments: "6x de R$ 499,50",
+    price: "R$ 899",
+    installments: "6x de R$ 149,83",
     description: "Ideal para pequenas empresas iniciando sua presença digital",
     features: [
       "Site responsivo em 72h",
@@ -20,8 +20,8 @@ const plans = [
   },
   {
     name: "Professional",
-    price: "R$ 4.997",
-    installments: "6x de R$ 832,83",
+    price: "R$ 2.999",
+    installments: "6x de R$ 499,83",
     description: "Nosso plano mais popular para empresas em crescimento",
     features: [
       "Site responsivo em 72h",
