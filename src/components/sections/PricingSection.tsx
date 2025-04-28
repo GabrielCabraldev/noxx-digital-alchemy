@@ -54,35 +54,43 @@ const plans = [
 
 const PricingSection = () => {
   return (
-    <section id="pricing" className="section bg-stellaris-light">
+    <section id="pricing" className="section bg-stellaris-light scroll-m-20">
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 reveal">
           <h2 className="mb-4">
             Escolha o plano ideal para <span className="text-gradient">sua empresa</span>
           </h2>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-600 mb-8">
             Soluções que combinam tecnologia, design e inteligência para impulsionar seu negócio digital.
           </p>
           <div className="flex flex-col gap-3 items-center">
-            <Badge variant="secondary" className="py-1.5 px-4 text-sm bg-purple-100 text-purple-800 border-purple-200">
+            <Badge 
+              variant="secondary" 
+              className="py-1.5 px-4 text-sm bg-purple-100 text-purple-800 border-purple-200"
+              aria-label="Indicador de performance com IA"
+            >
               Powered by AI: Aumento médio de 35% em conversões
             </Badge>
-            <Badge variant="secondary" className="py-1.5 px-4 text-sm bg-blue-100 text-blue-800 border-blue-200">
+            <Badge 
+              variant="secondary" 
+              className="py-1.5 px-4 text-sm bg-blue-100 text-blue-800 border-blue-200"
+              aria-label="Análise de dados em tempo real"
+            >
               Análise comportamental em tempo real
             </Badge>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
           {plans.map((plan) => (
             <div 
               key={plan.name}
-              className={`relative p-8 rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1 ${
-                plan.highlight ? 'ring-2 ring-stellaris-primary' : ''
-              }`}
+              className={`pricing-card ${plan.highlight ? 'pricing-card-popular' : ''}`}
+              aria-label={`Plano ${plan.name}`}
             >
               {plan.highlight && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-stellaris-primary text-white px-4 py-1 rounded-full text-sm">
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-stellaris-primary text-white 
+                               px-4 py-1 rounded-full text-sm font-medium">
                   Mais Popular
                 </span>
               )}
@@ -95,15 +103,18 @@ const PricingSection = () => {
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-stellaris-accent flex-shrink-0 mt-0.5" />
+                    <Check className="h-5 w-5 text-stellaris-accent flex-shrink-0 mt-0.5" 
+                           aria-hidden="true" />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
               <div className="mt-auto">
                 <Button 
-                  className="w-full bg-stellaris-primary hover:bg-stellaris-accent text-white"
+                  className="w-full bg-stellaris-primary hover:bg-stellaris-accent text-white 
+                            transition-all duration-300 transform hover:scale-105"
                   onClick={() => window.location.href = '#contact'}
+                  aria-label={`Começar com o plano ${plan.name}`}
                 >
                   Começar agora
                 </Button>

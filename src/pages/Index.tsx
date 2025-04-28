@@ -8,12 +8,15 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import PricingSection from '@/components/sections/PricingSection';
+import { useRevealAnimation } from '@/hooks/use-reveal-animation';
 
 const Index = () => {
+  useRevealAnimation();
+  
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main>
+      <main className="space-y-8 md:space-y-16">
         <HeroSection />
         <BenefitsSection />
         <ServicesSection />
